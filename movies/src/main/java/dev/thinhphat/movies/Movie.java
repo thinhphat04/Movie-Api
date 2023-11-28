@@ -2,6 +2,7 @@ package dev.thinhphat.movies;
 
 import java.util.List;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DocumentReference;
@@ -16,8 +17,7 @@ import lombok.NoArgsConstructor;
 public class Movie {
     
     @Id
-    // private Object id;
-    private String id;
+     private ObjectId id;
 
     private String imdbId;
 

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 public class ReviewService {
     @Autowired
     private ReviewRepository reviewRepository;
+
     @Autowired
     private MongoTemplate mongoTemplate;
 
@@ -20,6 +21,7 @@ public class ReviewService {
                 .matching(Criteria.where("imdbId").is(imdbId))
                 .apply(new Update().push("reviewIds").value(review))
                 .first();
+
         return review;
 
     }

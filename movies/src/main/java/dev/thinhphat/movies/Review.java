@@ -1,5 +1,6 @@
 package dev.thinhphat.movies;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -9,12 +10,12 @@ import lombok.NoArgsConstructor;
 
 @Document(collection = "reviews")
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+
 public class Review {
     @Id
-    // private Object id;
-    private String id;
+     private ObjectId id;
     private String body;
     
     public Review(String body){
